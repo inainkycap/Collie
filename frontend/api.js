@@ -1,4 +1,4 @@
-const API_BASE = localStorage.getItem("api_base") || "https://ichack26-backend.onrender.com";
+window.API_BASE = "https://ichack26-backend.onrender.com";
 
 async function readError(res) {
   const txt = await res.text().catch(() => "");
@@ -16,9 +16,9 @@ export async function apiFetch(path, options = {}) {
 
   let res;
   try {
-    res = await fetch(`${API_BASE}${path}`, { ...options, method, headers });
+    res = await fetch(`${window.API_BASE}${path}`, { ...options, method, headers });
   } catch {
-    throw new Error(`Network error: cannot reach ${API_BASE}. Is backend running?`);
+    throw new Error(`Network error: cannot reach ${window.API_BASE}. Is backend running?`);
   }
 
   if (!res.ok) throw new Error(await readError(res));
