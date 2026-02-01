@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Collie • Settings</title>
+</head>
+
+<body class="bg-slate-50 text-slate-900 text-[16px]">
+  <div id="toast"
+    class="fixed top-5 right-5 opacity-0 translate-y-2 transition duration-200
+           bg-slate-900 text-white text-sm px-4 py-2 rounded-xl shadow-lg">
+    Toast
+  </div>
+
+  <div class="max-w-5xl mx-auto p-6">
+    <div class="flex items-start justify-between gap-4 flex-wrap">
+      <div>
+        <div id="tripChip"
+          class="inline-flex items-center px-3 py-1 rounded-full bg-white border border-slate-200 text-sm text-slate-700">
+          Collie • Trip
+        </div>
+        <h1 id="tripTitle" class="text-4xl font-extrabold tracking-tight mt-3">Trip</h1>
+        <p id="brandLine" class="text-slate-600 mt-2 text-lg"></p>
+        <p class="text-slate-700 mt-3">
+          Rename the trip and see who has joined.
+        </p>
+      </div>
+
+      <button id="backBtn"
+        class="px-4 py-2 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-base font-semibold">
+        ← Back to menu
+      </button>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mt-8">
+      <div class="bg-white border border-slate-200 rounded-3xl shadow-sm p-7">
+        <div class="text-2xl font-bold">Trip name</div>
+        <p class="text-slate-600 mt-1">Updates for everyone using the backend.</p>
+
+        <input id="titleInput"
+          class="mt-4 w-full px-4 py-3 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-pink-200 text-base"
+          placeholder="New trip title" />
+
+        <button id="saveBtn"
+          class="mt-4 w-full px-5 py-3 rounded-2xl bg-pink-500 hover:bg-pink-600 text-white font-extrabold shadow-sm text-base">
+          Save title
+        </button>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-3xl shadow-sm p-7">
+        <div class="text-2xl font-bold">Joined members</div>
+        <p class="text-slate-600 mt-1">Live from backend.</p>
+
+        <div id="membersList" class="mt-4"></div>
+
+        <button id="refreshBtn"
+          class="mt-4 w-full px-4 py-3 rounded-2xl border border-slate-200 hover:bg-slate-50 text-base font-bold">
+          Refresh list
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./settings.js"></script>
+</body>
+</html>

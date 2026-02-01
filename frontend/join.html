@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Collie • Join</title>
+</head>
+
+<body class="bg-slate-50 text-slate-900 text-[16px]">
+  <div id="toast"
+    class="fixed top-5 right-5 opacity-0 translate-y-2 transition duration-200
+           bg-slate-900 text-white text-sm px-4 py-2 rounded-xl shadow-lg">
+    Toast
+  </div>
+
+  <div class="max-w-xl mx-auto p-6">
+    <div class="mt-8">
+      <div id="tripChip"
+        class="inline-flex items-center px-3 py-1 rounded-full bg-white border border-slate-200 text-sm text-slate-700">
+        Collie • Trip
+      </div>
+      <h1 id="tripTitle" class="text-4xl font-extrabold tracking-tight mt-3">Join</h1>
+      <p id="brandLine" class="text-slate-600 mt-2 text-lg"></p>
+      <p class="text-slate-700 mt-4">
+        First: enter your name. Then Collie takes you to the menu.
+      </p>
+    </div>
+
+    <div class="bg-white border border-slate-200 rounded-3xl shadow-sm p-7 mt-7">
+      <div class="text-sm font-bold text-slate-500 tracking-wider">REQUIRED</div>
+      <div class="text-2xl font-bold mt-2">Your name</div>
+
+      <input id="nameInput"
+        class="mt-4 w-full px-4 py-3 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-pink-200 text-base"
+        placeholder="e.g. Valentina" />
+
+      <button id="joinBtn"
+        class="mt-4 w-full px-4 py-3 rounded-2xl bg-pink-500 hover:bg-pink-600 text-white font-extrabold shadow-sm text-base">
+        Join trip
+      </button>
+
+      <div class="text-sm text-slate-500 mt-4">
+        You only need to join once per device.
+      </div>
+    </div>
+
+    <button id="backHome"
+      class="mt-6 px-4 py-2 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-base font-semibold">
+      ← Back to home
+    </button>
+  </div>
+
+  <script type="module" src="./join.js"></script>
+</body>
+</html>

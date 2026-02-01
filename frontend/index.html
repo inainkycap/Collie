@@ -1,62 +1,65 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Trip Coordinator</title>
-  </head>
-  <body class="bg-slate-50 text-slate-900">
-    <!-- Toast -->
-    <div id="toast"
-      class="fixed top-5 right-5 opacity-0 translate-y-2 transition duration-200
-             bg-slate-900 text-white text-sm px-4 py-2 rounded-xl shadow-lg">
-      Toast
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Collie</title>
+</head>
+
+<body class="bg-slate-50 text-slate-900 text-[16px]">
+  <div id="toast"
+    class="fixed top-5 right-5 opacity-0 translate-y-2 transition duration-200
+           bg-slate-900 text-white text-sm px-4 py-2 rounded-xl shadow-lg">
+    Toast
+  </div>
+
+  <div class="max-w-2xl mx-auto p-6">
+    <div class="mt-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-sm text-slate-700">
+        Collie • Group trip planning
+      </div>
+      <h1 class="text-5xl font-extrabold tracking-tight mt-4">Collie</h1>
+      <p class="text-slate-600 mt-2 text-lg">herding you to your next destination</p>
+      <p class="text-slate-700 mt-4 text-base">
+        Create a trip link → friends join → vote → get a simple itinerary + expenses board.
+      </p>
     </div>
 
-    <div class="max-w-2xl mx-auto p-6">
-      <div class="mt-6">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-xs text-slate-600">
-          ICHack • Group travel voting
-        </div>
-        <h1 class="text-4xl font-bold tracking-tight mt-4">Create a trip link</h1>
-        <p class="text-slate-600 mt-2">Invite friends, vote on destination and dates, and converge fast.</p>
-      </div>
+    <div class="mt-8 bg-white border border-slate-200 rounded-3xl shadow-sm p-7">
+      <label class="text-base font-semibold text-slate-800">Trip name</label>
+      <input id="tripTitle"
+        class="mt-2 w-full px-4 py-3 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-pink-200 text-base"
+        placeholder="e.g. ICHack Weekend Escape" />
 
-      <div class="mt-8 bg-white border border-slate-200 rounded-3xl shadow-sm p-6">
-        <label class="text-sm font-medium text-slate-700">Trip name</label>
-        <input id="tripTitle"
-          class="mt-2 w-full px-4 py-3 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-pink-200"
-          placeholder="Eg. Weekend getaway" />
+      <button id="createBtn"
+        class="mt-4 w-full px-4 py-3 rounded-2xl bg-pink-500 hover:bg-pink-600 text-white font-extrabold shadow-sm text-base">
+        Create trip link
+      </button>
 
-        <button id="createBtn"
-          class="mt-4 w-full px-4 py-3 rounded-2xl bg-pink-500 hover:bg-pink-700 text-white font-medium shadow-sm">
-          Create link
-        </button>
-
-        <div id="shareCard" class="hidden mt-6 p-4 rounded-2xl border border-slate-200 bg-slate-50">
-          <div class="text-xs text-slate-500">Invite link</div>
-          <div class="flex gap-2 mt-2">
-            <input id="inviteLink" readonly
-              class="flex-1 px-3 py-2 rounded-xl border border-slate-200 bg-white text-sm" />
-            <button id="copyBtn" class="px-4 py-2 rounded-xl border border-slate-200 hover:bg-white text-sm">
-              Copy
-            </button>
-          </div>
-          <button id="goBtn" class="mt-3 w-full px-4 py-2 rounded-2xl bg-slate-900 hover:bg-black text-white text-sm">
-            Open trip
+      <div id="shareCard" class="hidden mt-6 p-5 rounded-2xl border border-slate-200 bg-slate-50">
+        <div class="text-sm font-semibold text-slate-700">Invite link</div>
+        <div class="flex gap-2 mt-2">
+          <input id="inviteLink" readonly
+            class="flex-1 px-3 py-2 rounded-xl border border-slate-200 bg-white text-sm" />
+          <button id="copyBtn"
+            class="px-4 py-2 rounded-xl border border-slate-200 hover:bg-white text-sm font-bold">
+            Copy
           </button>
         </div>
-      </div>
 
-      <div class="text-xs text-slate-500 mt-6">
-        Tip: Keep it simple — vote first, plan later.
+        <button id="openBtn"
+          class="mt-3 w-full px-4 py-3 rounded-2xl bg-slate-900 hover:bg-black text-white text-base font-extrabold">
+          Open trip
+        </button>
       </div>
     </div>
 
-    <script type="module">
-      import { initIndex } from "./app.js";
-      initIndex();
-    </script>
-  </body>
+    <div class="text-sm text-slate-500 mt-6">
+      Tip: Collie is designed to nudge you away from tourist traps by default.
+    </div>
+  </div>
+
+  <script type="module" src="./index.js"></script>
+</body>
 </html>

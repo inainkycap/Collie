@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Collie • Expenses</title>
+</head>
+
+<body class="bg-slate-50 text-slate-900 text-[16px]">
+  <div id="toast"
+    class="fixed top-5 right-5 opacity-0 translate-y-2 transition duration-200
+           bg-slate-900 text-white text-sm px-4 py-2 rounded-xl shadow-lg">
+    Toast
+  </div>
+
+  <div class="max-w-5xl mx-auto p-6">
+    <div class="flex items-start justify-between gap-4 flex-wrap">
+      <div>
+        <div id="tripChip"
+          class="inline-flex items-center px-3 py-1 rounded-full bg-white border border-slate-200 text-sm text-slate-700">
+          Collie • Trip
+        </div>
+        <h1 id="tripTitle" class="text-4xl font-extrabold tracking-tight mt-3">Trip</h1>
+        <p id="brandLine" class="text-slate-600 mt-2 text-lg"></p>
+        <p class="text-slate-700 mt-3">
+          Track what you spent and see who owes who.
+        </p>
+      </div>
+
+      <button id="backBtn"
+        class="px-4 py-2 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-base font-semibold">
+        ← Back to menu
+      </button>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mt-8">
+      <div class="bg-white border border-slate-200 rounded-3xl shadow-sm p-7">
+        <div class="text-2xl font-bold">Add an expense</div>
+        <p class="text-slate-600 mt-1">Keep it simple. Collie will settle up.</p>
+
+        <div class="mt-5 space-y-3">
+          <input id="desc"
+            class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-pink-200 text-base"
+            placeholder="Description (e.g. Dinner)" />
+
+          <input id="amount" type="number" step="0.01"
+            class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-pink-200 text-base"
+            placeholder="Amount (e.g. 42.50)" />
+
+          <input id="paidBy"
+            class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-pink-200 text-base"
+            placeholder="Paid by (auto-filled)" />
+
+          <input id="splitBetween"
+            class="w-full px-4 py-3 rounded-2xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-pink-200 text-base"
+            placeholder="Split between (comma-separated) e.g. Alice,Bob" />
+        </div>
+
+        <button id="addBtn"
+          class="mt-4 w-full px-5 py-3 rounded-2xl bg-pink-500 hover:bg-pink-600 text-white font-extrabold shadow-sm text-base">
+          Add expense
+        </button>
+
+        <div class="mt-5 p-5 rounded-3xl border border-slate-200 bg-slate-50">
+          <div class="text-xs font-bold text-slate-500 tracking-wider">TOTAL SPENT</div>
+          <div id="total" class="text-3xl font-extrabold mt-2">£0.00</div>
+        </div>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-3xl shadow-sm p-7">
+        <div class="flex items-center justify-between">
+          <div class="text-2xl font-bold">Settle up</div>
+          <button id="settleBtn"
+            class="px-4 py-2 rounded-xl bg-slate-900 hover:bg-black text-white font-bold text-base">
+            Calculate
+          </button>
+        </div>
+
+        <div id="expensesList" class="mt-4"></div>
+
+        <div class="mt-6 p-5 rounded-3xl border border-slate-200 bg-slate-50">
+          <div class="text-xs font-bold text-slate-500 tracking-wider">TRANSFERS</div>
+          <pre id="settleText" class="mt-3 whitespace-pre-wrap text-base text-slate-800"></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./expenses.js"></script>
+</body>
+</html>
