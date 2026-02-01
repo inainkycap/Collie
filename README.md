@@ -36,7 +36,7 @@ If the link doesn’t work, paste this in your browser:
 
 ## 💻 Tech Stack
 - **Frontend:** Javascript, HTML
-- **Backend:** Python  
+- **Backend:** Python, FastAPI
 - **Storage:** Collie uses in-memory storage for simplicity—no database setup required. Perfect for quick, lightweight deployment.
 - **Recommendations:** Custom logic for hidden-gem suggestions, using Nominatim and Overpass API
 
